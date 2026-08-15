@@ -1,291 +1,484 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HUBmath - 수학을 쉽고 재미있게. 개념부터 심화까지 체계적인 수학 강의.">
-  <title>HUBmath - 수학의 허브</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+<!-- META -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="허브수학 - 수학의 허브">
+<!-- TITLE -->
+<title>::: 허브수학 :::</title>
+<!-- CSS -->
+<link rel="stylesheet" href="common/css/xe.min.css">
+<link rel="stylesheet" href="layouts/smart/css/layout.css">
+<link rel="stylesheet" href="layouts/smart/fonts/nanumgothic.css">
+<link rel="stylesheet" href="layouts/smart/css/colorset3.css">
+<link rel="stylesheet" href="widgets/cameronSlider/skins/FlexSlider/css/flexslider.css">
+<link rel="stylesheet" href="widgets/cameronWebzine/skins/smart_webzine/smart_webzine.css">
+<link rel="stylesheet" href="widgetstyles/more_plus/more_plus.css">
+<link rel="stylesheet" href="widgets/cameronListOne/skins/smart_list/smart_list.css">
+<link rel="stylesheet" href="widgets/cameronWebzine/skins/smart_news/smart_news.css">
+<link rel="stylesheet" href="addons/cameron_mobile_nav/css/cameron_mobile_navr.css">
+<link rel="stylesheet" href="addons/cameron_plugin/css/cameron_plugin.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
 </head>
-<body id="style-box">
 
-<!-- HEADER -->
-<header id="header">
-  <div class="container">
-    <a href="#" id="logo">HUB<span>math</span></a>
+<body id="style-box" class="colorset3">
+<p class="skipNav"><a href="#content" id="skip" tabindex="1">본문으로 바로가기</a></p>
+<div id="cameron-body">
 
-    <button id="nav-toggle" aria-label="메뉴 열기">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- HEADER -->
+  <header id="header" class="cameron-container newclearfix">
+    <a href="index.html" id="logo" tabindex="2">
+      <img src="files/attach/images/113/9d12d70e5c7137e849b18f8c14dd3f17.gif" alt="허브수학" title="허브수학" />
+    </a>
 
-    <nav id="main-nav">
-      <ul>
-        <li><a class="nav1st" href="#about">소개</a></li>
-        <li>
-          <a class="nav1st" href="#courses">수업안내</a>
+    <nav id="main-nav" class="newclearfix">
+      <ul id="sf-menu" class="sf-arrows">
+        <!-- HOME -->
+        <li class="current1">
+          <a class="nav1st" href="index.html">HOME</a>
           <ul>
-            <li><a href="#courses">중학수학</a></li>
-            <li><a href="#courses">고등수학</a></li>
-            <li><a href="#courses">수능수학</a></li>
+            <li><a class="nav2nd" href="pages/notice.html">공지사항</a></li>
+            <li><a class="nav2nd" href="pages/profile.html">프로필</a></li>
+            <li><a class="nav2nd" href="pages/diary.html">다이어리</a></li>
+            <li><a class="nav2nd" href="pages/memory.html">추억록</a></li>
+            <li><a class="nav2nd" href="pages/control.html">운영자방</a></li>
           </ul>
         </li>
-        <li><a class="nav1st" href="#materials">학습자료</a></li>
-        <li><a class="nav1st" href="#notice">공지사항</a></li>
-        <li><a class="nav1st" href="#contact">연락처</a></li>
+        <!-- 커뮤니티 -->
+        <li>
+          <a class="nav1st" href="pages/freeboard.html">커뮤니티</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/freeboard.html">자유게시판</a></li>
+            <li><a class="nav2nd" href="pages/movingstory.html">감동이 있는 글</a></li>
+            <li><a class="nav2nd" href="pages/movingmovie.html">감동이 있는 영상</a></li>
+            <li><a class="nav2nd" href="pages/bookstory.html">책 그리고 이야기</a></li>
+            <li><a class="nav2nd" href="pages/people.html">사람 그리고 생각</a></li>
+          </ul>
+        </li>
+        <!-- 수학방 -->
+        <li>
+          <a class="nav1st" href="pages/mathnews.html">수학방</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathnews.html">수학소식</a></li>
+            <li><a class="nav2nd" href="pages/mathstory.html">수학이야기</a></li>
+            <li><a class="nav2nd" href="pages/mathquestion.html">묻고 답하기</a></li>
+            <li><a class="nav2nd" href="pages/mathtool.html">수학교구</a></li>
+            <li><a class="nav2nd" href="pages/puzzle.html">수학퍼즐</a></li>
+          </ul>
+        </li>
+        <!-- 수학교육 -->
+        <li>
+          <a class="nav1st" href="pages/schooledu.html">수학교육</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/schooledu.html">학교수업</a></li>
+            <li><a class="nav2nd" href="pages/mathmake.html">체험수학</a></li>
+            <li><a class="nav2nd" href="pages/gifted.html">영재수학</a></li>
+            <li><a class="nav2nd" href="pages/mathbook.html">수학도서</a></li>
+            <li><a class="nav2nd" href="pages/software.html">수학소프트웨어</a></li>
+          </ul>
+        </li>
+        <!-- 전공수학 -->
+        <li>
+          <a class="nav1st" href="pages/majornote.html">전공수학</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathqna.html">전공 Q&amp;A</a></li>
+            <li><a class="nav2nd" href="pages/majornote.html">전공노트</a></li>
+            <li><a class="nav2nd" href="pages/mathjournal.html">수학저널</a></li>
+          </ul>
+        </li>
+        <!-- 지식창고 -->
+        <li>
+          <a class="nav1st" href="pages/livingtip.html">지식창고</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/livingtip.html">생활속의 지혜</a></li>
+            <li><a class="nav2nd" href="pages/language.html">외국어</a></li>
+            <li><a class="nav2nd" href="pages/ai.html">AI</a></li>
+          </ul>
+        </li>
+        <!-- 갤러리 -->
+        <li>
+          <a class="nav1st" href="pages/gallery.html">갤러리</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/gallery.html">자유갤러리</a></li>
+          </ul>
+        </li>
+        <!-- 자료실 -->
+        <li>
+          <a class="nav1st" href="pages/mathfile.html">자료실</a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathfile.html">수학자료</a></li>
+            <li><a class="nav2nd" href="pages/etcfile.html">기타자료</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="container">
-    <span class="hero-label">MATHEMATICS HUB</span>
-    <h1 class="hero-title">수학이 쉬워지는 곳,<br><em>HUBmath</em></h1>
-    <p class="hero-sub">
-      개념의 본질을 꿰뚫는 명쾌한 설명으로<br>
-      중·고등 수학부터 수능까지 함께합니다.
-    </p>
-    <a href="#courses" class="btn-primary">수업 안내 보기</a>
-    <a href="#materials" class="btn-outline">학습자료 다운로드</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">About</span>
-      <h2 class="section-title">선생님 소개</h2>
-      <span class="divider"></span>
-    </div>
-    <div class="about-grid">
-      <div>
-        <div class="about-avatar">🧑‍🏫</div>
-      </div>
-      <div class="about-info">
-        <h3>허브수학 강사</h3>
-        <p class="title-tag">수학 전문 강사 · HUBmath 운영자</p>
-        <p>
-          수학의 본질적인 원리와 개념에서 출발하여,<br>
-          학생 스스로 생각하고 풀어나갈 수 있는 힘을 기르는 수업을 지향합니다.<br>
-          단순 암기가 아닌 진짜 이해로 가는 수학을 함께 만들어갑니다.
-        </p>
-        <ul class="skill-list">
-          <li>수학1·2</li>
-          <li>미적분</li>
-          <li>확률과 통계</li>
-          <li>기하</li>
-          <li>중학수학</li>
-          <li>수능 수학</li>
-          <li>내신 대비</li>
-          <li>심화수학</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COURSES -->
-<section id="courses" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Courses</span>
-      <h2 class="section-title">수업 안내</h2>
-      <p class="section-desc">체계적인 커리큘럼으로 단계별 실력을 쌓아갑니다.</p>
-      <span class="divider"></span>
-    </div>
-    <div class="course-grid">
-      <div class="course-card">
-        <span class="course-icon">📘</span>
-        <h3>중학수학</h3>
-        <p>중1~3 개념 완성 및 내신 대비. 수학의 기초를 탄탄히 다지는 과정입니다.</p>
-        <a href="#contact" class="course-link">문의하기 →</a>
-      </div>
-      <div class="course-card">
-        <span class="course-icon">📗</span>
-        <h3>고등수학</h3>
-        <p>수학1·2, 미적분, 확률과 통계, 기하. 개념~문제풀이까지 체계적으로.</p>
-        <a href="#contact" class="course-link">문의하기 →</a>
-      </div>
-      <div class="course-card">
-        <span class="course-icon">📕</span>
-        <h3>수능수학</h3>
-        <p>수능 출제 경향 분석과 킬러문항 공략. 실전 감각을 키우는 과정입니다.</p>
-        <a href="#contact" class="course-link">문의하기 →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MATERIALS -->
-<section id="materials" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Materials</span>
-      <h2 class="section-title">학습 자료</h2>
-      <p class="section-desc">수업에서 사용하는 자료를 PDF로 제공합니다.</p>
-      <span class="divider"></span>
-    </div>
-    <ul class="material-list">
-      <li class="material-item">
-        <div class="material-badge">📄</div>
-        <div class="material-info">
-          <h4>수학1 개념 정리 노트 (2024)</h4>
-          <span>지수·로그함수, 삼각함수, 수열 · PDF · 2.4MB</span>
-        </div>
-        <a href="#" class="material-action" onclick="alert('준비 중입니다.')">다운로드</a>
-      </li>
-      <li class="material-item">
-        <div class="material-badge">📄</div>
-        <div class="material-info">
-          <h4>수학2 개념 정리 노트 (2024)</h4>
-          <span>극한, 미분, 적분 · PDF · 3.1MB</span>
-        </div>
-        <a href="#" class="material-action" onclick="alert('준비 중입니다.')">다운로드</a>
-      </li>
-      <li class="material-item">
-        <div class="material-badge">📄</div>
-        <div class="material-info">
-          <h4>수능 킬러문항 분석 자료</h4>
-          <span>2020~2024 기출 분석 · PDF · 5.8MB</span>
-        </div>
-        <a href="#" class="material-action" onclick="alert('준비 중입니다.')">다운로드</a>
-      </li>
-      <li class="material-item">
-        <div class="material-badge">📄</div>
-        <div class="material-info">
-          <h4>미적분 핵심 공식 요약집</h4>
-          <span>공식 총정리 · PDF · 1.2MB</span>
-        </div>
-        <a href="#" class="material-action" onclick="alert('준비 중입니다.')">다운로드</a>
-      </li>
-      <li class="material-item">
-        <div class="material-badge">📄</div>
-        <div class="material-info">
-          <h4>확률과 통계 문제풀이 특강</h4>
-          <span>조합론, 확률분포 · PDF · 2.7MB</span>
-        </div>
-        <a href="#" class="material-action" onclick="alert('준비 중입니다.')">다운로드</a>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- NOTICE -->
-<section id="notice" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Notice</span>
-      <h2 class="section-title">공지사항</h2>
-      <span class="divider"></span>
-    </div>
-    <ul class="notice-list">
-      <li class="notice-item">
-        <span class="notice-dot"></span>
-        <a href="#">2025학년도 수능 후 겨울특강 일정 안내</a>
-        <span class="notice-date">2024.11.15</span>
-      </li>
-      <li class="notice-item">
-        <span class="notice-dot"></span>
-        <a href="#">2025년 1월 수학1·2 집중반 모집</a>
-        <span class="notice-date">2024.11.10</span>
-      </li>
-      <li class="notice-item">
-        <span class="notice-dot"></span>
-        <a href="#">수능 수학 총평 및 2025 대비 전략</a>
-        <span class="notice-date">2024.11.14</span>
-      </li>
-      <li class="notice-item">
-        <span class="notice-dot"></span>
-        <a href="#">11월 수업 일정 변경 안내</a>
-        <span class="notice-date">2024.10.28</span>
-      </li>
-      <li class="notice-item">
-        <span class="notice-dot"></span>
-        <a href="#">학습자료 추가 업로드 완료</a>
-        <span class="notice-date">2024.10.20</span>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">연락처</h2>
-      <p class="section-desc">수업 문의, 자료 요청 등 편하게 연락 주세요.</p>
-      <span class="divider"></span>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>문의하기</h3>
-        <p>수업 관련 문의, 수강 신청, 자료 요청은<br>아래 연락처 또는 메시지 폼을 이용해 주세요.</p>
-        <div class="contact-detail">
-          <div class="ci-icon">✉</div>
-          <span>hanshin877@gmail.com</span>
-        </div>
-        <div class="contact-detail">
-          <div class="ci-icon">📘</div>
-          <span>hubmath.com</span>
-        </div>
-        <div class="contact-detail">
-          <div class="ci-icon">💬</div>
-          <span>카카오톡 채널: @hubmath</span>
-        </div>
-      </div>
-      <div class="contact-form">
-        <form id="contact-form">
-          <div class="form-group">
-            <label>이름</label>
-            <input type="text" placeholder="이름을 입력하세요" required>
-          </div>
-          <div class="form-group">
-            <label>이메일</label>
-            <input type="email" placeholder="이메일을 입력하세요" required>
-          </div>
-          <div class="form-group">
-            <label>메시지</label>
-            <textarea placeholder="문의 내용을 입력하세요" required></textarea>
-          </div>
-          <button type="submit" class="form-submit">메시지 보내기</button>
+  <!-- CONTENTS -->
+  <section id="contents" class="cameron-container newclearfix">
+    <header class="main-page-header newclearfix">
+      <div class="searchbox newclearfix">
+        <form id="isSearch" onsubmit="return false;">
+          <input type="text" class="inputText" placeholder="검색" />
+          <input type="image" src="layouts/smart/img/search.gif" class="submit" alt="검색" />
         </form>
       </div>
-    </div>
-  </div>
-</section>
+    </header>
 
-<!-- FOOTER -->
-<footer id="footer">
-  <div class="container">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-logo">HUB<span>math</span></div>
-        <p class="footer-desc">
-          수학의 본질을 탐구하는 공간<br>
-          Copyright © 2024 HUBmath. All rights reserved.
-        </p>
+    <section class="newclearfix">
+      <div id="content" class="content newclearfix widget-page">
+
+        <!-- 슬라이더 (전체 너비) -->
+        <div class="xe-widget-wrapper" style="float:left;width:100%;margin:0;padding:0;">
+          <section class="slider">
+            <div id="flexslider1" class="flexslider">
+              <ul class="slides" style="height:350px">
+                <li><img src="files/thumbnails/169/002/940x350.crop.jpg" alt="슬라이드1" /></li>
+                <li><img src="files/thumbnails/546/001/940x350.crop.jpg" alt="슬라이드2" /></li>
+                <li><img src="files/thumbnails/629/940x350.crop.jpg" alt="슬라이드3" /></li>
+                <li><img src="files/thumbnails/623/940x350.crop.jpg" alt="슬라이드4" /></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- 감동이 있는 글 (우측) -->
+        <div class="xe-widget-wrapper" style="float:right;width:300px;margin:34px 0 0 20px;height:466px;">
+          <div class="more_plus">
+            <div class="mpTitle newclearfix">
+              <h4>감동이 있는 글</h4>
+              <a href="pages/movingstory.html" title="더보기"></a>
+            </div>
+            <div class="mpContent newclearfix">
+              <div class="smart-webzine-container newclearfix">
+                <ul class="smart-webzine">
+                  <li class="newclearfix">
+                    <div class="webzine-thumb" style="width:100px;height:80px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:32px;">📖</div>
+                    <p class="titleArea"><a href="pages/movingstory.html"><span class="title">떡볶이 CEO 이경수가...</span></a></p>
+                    <p class="summary"><a href="pages/movingstory.html">사람은 포기하지 않을 때 더욱 빛나는 법입니다...</a></p>
+                    <p class="date">2015-02-24</p>
+                  </li>
+                  <li class="newclearfix">
+                    <div class="webzine-thumb" style="width:100px;height:80px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:32px;">✨</div>
+                    <p class="titleArea"><a href="pages/movingstory.html"><span class="title">나는 단지 미끄러졌...</span></a></p>
+                    <p class="summary"><a href="pages/movingstory.html">만약 그대가 어렵거든 이런 사람을 생각해 보십시오...</a></p>
+                    <p class="date">2015-02-24</p>
+                  </li>
+                  <li class="newclearfix">
+                    <div class="webzine-thumb" style="width:100px;height:80px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:32px;">🌱</div>
+                    <p class="titleArea"><a href="pages/movingstory.html"><span class="title">포기하지 말라</span></a></p>
+                    <p class="summary"><a href="pages/movingstory.html">99가지는 다 해도 1가지만은 하지 말라. 그것은 포기...</a></p>
+                    <p class="date">2015-02-24</p>
+                  </li>
+                  <li class="newclearfix">
+                    <div class="webzine-thumb" style="width:100px;height:80px;background:#f5f5f5;display:flex;align-items:center;justify-content:center;font-size:32px;">💫</div>
+                    <p class="titleArea"><a href="pages/movingstory.html"><span class="title">내 영혼을 사랑하는...</span></a></p>
+                    <p class="summary"><a href="pages/movingstory.html">시골에서 농사를 지으며 자연과 함께 살아가는 이야기...</a></p>
+                    <p class="date">2015-02-24</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 공지 & 수학소식 (좌측) -->
+        <div class="xe-widget-wrapper" style="float:left;width:300px;margin:35px 0 0 0;">
+          <div class="more_plus">
+            <div class="mpTitle newclearfix">
+              <h4>공지 &amp; 수학소식</h4>
+              <a href="pages/mathnews.html" title="더보기"></a>
+            </div>
+            <div class="mpContent newclearfix">
+              <div class="smart-list-container newclearfix">
+                <ul class="smart-list">
+                  <li class="newclearfix">
+                    <a href="pages/mathnews.html">
+                      <p class="titleArea"><span class="title">최신 함수암호 무력화, 학계에 신선한 충격</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathnews.html">
+                      <p class="titleArea"><span class="title">"O 아니면 X… 수학은 완벽·영원한 진실 추구"</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathnews.html">
+                      <p class="titleArea"><span class="title">경남대 과학영재교육원 학생 6명, 국제 학술대회 참가</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/notice.html">
+                      <p class="titleArea"><span class="title">[공지] 홈페이지 새롭게 시작합니다</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/notice.html">
+                      <p class="titleArea"><span class="title">수학교육 관련 최신 소식을 전합니다</span></p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 수학이야기 (중앙) -->
+        <div class="xe-widget-wrapper" style="float:left;width:300px;margin:35px 0 0 20px;">
+          <div class="more_plus">
+            <div class="mpTitle newclearfix">
+              <h4>수학이야기</h4>
+              <a href="pages/mathstory.html" title="더보기"></a>
+            </div>
+            <div class="mpContent newclearfix">
+              <div class="smart-list-container newclearfix">
+                <ul class="smart-list">
+                  <li class="newclearfix">
+                    <a href="pages/mathstory.html">
+                      <p class="titleArea"><span class="title">황금비율과 피보나치 수열의 아름다움</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathstory.html">
+                      <p class="titleArea"><span class="title">오일러의 항등식, 가장 아름다운 수식</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathstory.html">
+                      <p class="titleArea"><span class="title">무한의 수학 - 칸토어의 집합론</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathstory.html">
+                      <p class="titleArea"><span class="title">일상 속에 숨어있는 수학 패턴</span></p>
+                    </a>
+                  </li>
+                  <li class="newclearfix">
+                    <a href="pages/mathstory.html">
+                      <p class="titleArea"><span class="title">수학자 가우스의 천재적인 계산법</span></p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 갤러리 (전체 너비) -->
+        <div class="xe-widget-wrapper" style="float:left;width:100%;margin:30px 0 0 0;">
+          <div class="more_plus">
+            <div class="mpTitle newclearfix">
+              <h4>자유갤러리</h4>
+              <a href="pages/gallery.html" title="더보기"></a>
+            </div>
+            <div class="mpContent newclearfix" style="padding:10px 0;">
+              <div class="gallery-preview" style="display:flex;gap:10px;flex-wrap:wrap;">
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🏔️</div>
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🌸</div>
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🌊</div>
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🌲</div>
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🎑</div>
+                <div class="gallery-item" style="width:140px;height:110px;background:#e8f5d0;display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid #ddd;">🌅</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 관련사이트 배너 -->
+        <div class="xe-widget-wrapper" style="float:left;width:620px;margin:30px 0 5px 0;">
+          <div class="more_plus">
+            <div class="mpTitle newclearfix">
+              <h4>관련 사이트</h4>
+            </div>
+            <div class="mpContent newclearfix">
+              <ul style="list-style:none;margin:10px 0;padding:0;display:flex;flex-wrap:wrap;gap:10px;">
+                <li><a href="http://www.ebsmath.co.kr" target="_blank" style="display:inline-block;padding:6px 14px;background:#a2c143;color:#fff;font-size:12px;font-weight:700;">EBS수학</a></li>
+                <li><a href="http://www.classting.com" target="_blank" style="display:inline-block;padding:6px 14px;background:#a2c143;color:#fff;font-size:12px;font-weight:700;">클래스팅</a></li>
+                <li><a href="http://www.tmath.or.kr" target="_blank" style="display:inline-block;padding:6px 14px;background:#a2c143;color:#fff;font-size:12px;font-weight:700;">전국수학교사모임</a></li>
+                <li><a href="http://youtube.com" target="_blank" style="display:inline-block;padding:6px 14px;background:#a2c143;color:#fff;font-size:12px;font-weight:700;">YouTube</a></li>
+                <li><a href="http://google.com" target="_blank" style="display:inline-block;padding:6px 14px;background:#a2c143;color:#fff;font-size:12px;font-weight:700;">Google</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- #content -->
+    </section>
+  </section><!-- #contents -->
+
+  <!-- FOOTER -->
+  <footer id="footer" class="cameron-container newclearfix">
+    <span class="footer_arrow"></span>
+    <div class="line-bottom newclearfix">
+      <div class="footer-l newclearfix">
+        <a id="logo-bottom" href="index.html">
+          <span class="smart-logo-bottom"></span>
+        </a>
       </div>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="#about">소개</a></li>
-          <li><a href="#courses">수업안내</a></li>
-          <li><a href="#materials">학습자료</a></li>
-          <li><a href="#notice">공지사항</a></li>
-          <li><a href="#contact">연락처</a></li>
+      <div class="footer-r newclearfix">
+        <nav id="bottom-nav" class="newclearfix">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="pages/freeboard.html">커뮤니티</a></li>
+            <li><a href="pages/mathnews.html">수학방</a></li>
+            <li><a href="pages/schooledu.html">수학교육</a></li>
+            <li><a href="pages/majornote.html">전공수학</a></li>
+            <li><a href="pages/livingtip.html">지식창고</a></li>
+            <li><a href="pages/gallery.html">갤러리</a></li>
+            <li><a href="pages/mathfile.html">자료실</a></li>
+          </ul>
+        </nav>
+        <ul id="contact-info">
+          <li class="email"><a href="mailto:hanshin877@hanmail.net">hanshin877@hanmail.net</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
-    <p class="footer-copy">Made with ❤ for students who love math</p>
+  </footer>
+
+  <footer id="copyinfo" class="cameron-container newclearfix">
+    <ul>
+      <li>Copyright&copy; 2015 정현식&nbsp;&nbsp;All rights reserved.</li>
+    </ul>
+  </footer>
+
+</div><!-- #cameron-body -->
+
+<a href="#" id="sTop" title="Back to Top" style="display:none;">TOP</a>
+
+<!-- Mobile Nav -->
+<a id="TouchMe" href="#"><i class="fa fa-bars"></i></a>
+<div id="cameron-mobile-nav" class="mobile-nav-right">
+  <div id="touch-scroll">
+    <div id="mobile-sign" class="newclearfix">
+      <div class="mobile-home"><a href="index.html"><i class="fa fa-home"></i><br>HOME</a></div>
+    </div>
+    <div id="mobile-nav">
+      <ul>
+        <li>
+          <a class="nav1st" href="index.html">HOME <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/notice.html">공지사항</a></li>
+            <li><a class="nav2nd" href="pages/profile.html">프로필</a></li>
+            <li><a class="nav2nd" href="pages/diary.html">다이어리</a></li>
+            <li><a class="nav2nd" href="pages/memory.html">추억록</a></li>
+            <li><a class="nav2nd" href="pages/control.html">운영자방</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/freeboard.html">커뮤니티 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/freeboard.html">자유게시판</a></li>
+            <li><a class="nav2nd" href="pages/movingstory.html">감동이 있는 글</a></li>
+            <li><a class="nav2nd" href="pages/movingmovie.html">감동이 있는 영상</a></li>
+            <li><a class="nav2nd" href="pages/bookstory.html">책 그리고 이야기</a></li>
+            <li><a class="nav2nd" href="pages/people.html">사람 그리고 생각</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/mathnews.html">수학방 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathnews.html">수학소식</a></li>
+            <li><a class="nav2nd" href="pages/mathstory.html">수학이야기</a></li>
+            <li><a class="nav2nd" href="pages/mathquestion.html">묻고 답하기</a></li>
+            <li><a class="nav2nd" href="pages/mathtool.html">수학교구</a></li>
+            <li><a class="nav2nd" href="pages/puzzle.html">수학퍼즐</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/schooledu.html">수학교육 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/schooledu.html">학교수업</a></li>
+            <li><a class="nav2nd" href="pages/mathmake.html">체험수학</a></li>
+            <li><a class="nav2nd" href="pages/gifted.html">영재수학</a></li>
+            <li><a class="nav2nd" href="pages/mathbook.html">수학도서</a></li>
+            <li><a class="nav2nd" href="pages/software.html">수학소프트웨어</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/majornote.html">전공수학 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathqna.html">전공 Q&amp;A</a></li>
+            <li><a class="nav2nd" href="pages/majornote.html">전공노트</a></li>
+            <li><a class="nav2nd" href="pages/mathjournal.html">수학저널</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/livingtip.html">지식창고 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/livingtip.html">생활속의 지혜</a></li>
+            <li><a class="nav2nd" href="pages/language.html">외국어</a></li>
+            <li><a class="nav2nd" href="pages/ai.html">AI</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/gallery.html">갤러리 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/gallery.html">자유갤러리</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="nav1st" href="pages/mathfile.html">자료실 <i class="fa fa-angle-down"></i></a>
+          <ul>
+            <li><a class="nav2nd" href="pages/mathfile.html">수학자료</a></li>
+            <li><a class="nav2nd" href="pages/etcfile.html">기타자료</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-</footer>
+</div>
 
-<!-- BACK TO TOP -->
-<button id="sTop" aria-label="맨 위로">↑</button>
-
+<!-- JS -->
+<script src="common/js/jquery.min.js"></script>
+<script src="widgets/cameronSlider/skins/FlexSlider/js/jquery.flexslider.min.js"></script>
+<script src="layouts/smart/js/superfish.min.js"></script>
+<script src="layouts/smart/js/smart.js"></script>
 <script src="js/main.js"></script>
+<script>
+jQuery(document).ready(function($){
+  // FlexSlider
+  $('#flexslider1').flexslider({
+    animation: "slide",
+    animationSpeed: 600,
+    slideshow: true,
+    slideshowSpeed: 7000,
+    controlNav: true,
+    directionNav: true,
+    prevText: "",
+    nextText: ""
+  });
+  // Superfish nav
+  $('#sf-menu').superfish({
+    delay: 200,
+    animation: {opacity:'show', height:'show'},
+    speed: 'fast'
+  });
+  // Back to top
+  $(window).scroll(function(){
+    if($(this).scrollTop() > 400) $('#sTop').fadeIn();
+    else $('#sTop').fadeOut();
+  });
+  $('#sTop').click(function(){
+    $('html,body').animate({scrollTop:0}, 400);
+    return false;
+  });
+  // Mobile nav toggle
+  $('#TouchMe').click(function(e){
+    e.preventDefault();
+    $('#cameron-mobile-nav').toggleClass('open');
+  });
+  // Mobile nav sub toggle
+  $('#mobile-nav .nav1st').click(function(e){
+    e.preventDefault();
+    var $ul = $(this).next('ul');
+    if($ul.length){
+      $ul.slideToggle(200);
+    }
+  });
+});
+</script>
 </body>
 </html>

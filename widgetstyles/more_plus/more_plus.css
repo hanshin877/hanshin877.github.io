@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* a */
+.more_plus a,
+.more_plus a > *{text-decoration:none; -webkit-transition:background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out; -moz-transition:background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out; -ms-transition:background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out; -o-transition:background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out; transition:background-color .2s ease, border .2s ease, color .2s ease, opacity .2s ease-in-out}
+.more_plus a:hover{text-decoration:none}
+.more_plus img,
+.more_plus iframe{vertical-align:middle}
+
+/* Widget Style */
+.more_plus{width:100%}
+.more_plus .mpTitle{margin-bottom:14px}
+.more_plus .mpTitle h4{float:left; margin:0; padding:2px 0 0 0; font-family:'Nanum Gothic','Malgun Gothic',돋움,sans-serif; font-size:14px; color:#333}
+.more_plus .mpTitle a{float:right; display:block; width:56px; height:19px; background:#dddddd url(mp.png) no-repeat; outline:none}
+.more_plus .mpTitle a:hover{background-color:#fd7700}

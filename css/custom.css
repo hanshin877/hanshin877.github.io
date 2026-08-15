@@ -1,0 +1,163 @@
+/* hubmath.com 커스텀 보완 CSS */
+
+/* 슬라이더 이미지 크기 고정 */
+.flexslider .slides li img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 갤러리 프리뷰 */
+.gallery-preview a {
+  display: block;
+  overflow: hidden;
+}
+.gallery-item {
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.gallery-item:hover { opacity: .8; }
+
+/* 관련사이트 버튼 hover */
+.xe-widget-wrapper a[style*="background:#a2c143"]:hover {
+  background: #8aab2e !important;
+}
+
+/* 모바일 네비 */
+#TouchMe {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 200;
+  background: #a2c143;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#cameron-mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 260px;
+  height: 100%;
+  background: #2a2a2a;
+  z-index: 300;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform .3s;
+}
+#cameron-mobile-nav.open {
+  transform: translateX(0);
+}
+
+#mobile-sign {
+  background: #a2c143;
+  padding: 14px 16px;
+}
+#mobile-sign .mobile-home a {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#mobile-nav li a.nav1st {
+  display: block;
+  padding: 13px 16px;
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 700;
+  border-bottom: 1px solid #3a3a3a;
+  background: #2a2a2a;
+}
+#mobile-nav li a.nav1st:hover { color: #a2c143; }
+#mobile-nav li ul { display: none; }
+#mobile-nav li ul li a {
+  display: block;
+  padding: 10px 16px 10px 28px;
+  color: #aaa;
+  font-size: 12px;
+  border-bottom: 1px solid #333;
+  background: #222;
+}
+#mobile-nav li ul li a:hover { color: #a2c143; }
+
+/* 서브 페이지 공통 */
+.sub-page-wrapper {
+  min-height: 400px;
+}
+.sub-page-notice {
+  background: #f9fff0;
+  border: 1px solid #d8edd0;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* more_plus 스타일 보완 */
+.more_plus .mpTitle { margin-bottom: 0; }
+.more_plus .mpTitle h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #3a3a3a;
+}
+.more_plus .mpTitle a::after {
+  content: "더보기";
+  font-size: 11px;
+  color: #aaa;
+}
+.more_plus .mpContent { padding-top: 8px; }
+
+/* smart-webzine 보완 */
+.smart-webzine li {
+  padding: 8px 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+.smart-webzine li:last-child { border-bottom: none; }
+.smart-webzine .webzine-thumb {
+  float: left;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.smart-webzine .titleArea {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.smart-webzine .titleArea .title { color: #3a3a3a; }
+.smart-webzine .summary {
+  font-size: 11px;
+  color: #888;
+  margin: 0 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+}
+.smart-webzine .date { font-size: 11px; color: #bbb; margin: 0; }
+
+/* smart-list 보완 */
+.smart-list li {
+  padding: 9px 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+.smart-list li:last-child { border-bottom: none; }
+.smart-list .titleArea { margin: 0; }
+.smart-list .title {
+  font-size: 12px;
+  color: #444;
+}
+.smart-list li:hover .title { color: #a2c143; }
+
+@media screen and (max-width: 767px) {
+  #TouchMe { display: block; }
+  #main-nav { display: none; }
+}
