@@ -148,6 +148,22 @@
 }
 .cmt-body img { max-width: 100%; height: auto; }
 
+/* ── 이미지 닉네임 ── */
+.img-nick {
+  max-height: 20px;
+  max-width: 80px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.article-meta .img-nick {
+  max-height: 22px;
+  max-width: 100px;
+}
+.cmt-nick .img-nick {
+  max-height: 18px;
+  max-width: 80px;
+}
+
 /* ── 반응형 ── */
 @media (max-width: 767px) {
   .board-list td.writer,

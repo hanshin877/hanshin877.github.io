@@ -8,6 +8,8 @@ from pathlib import Path
 DUMP     = "/mnt/d/claude/hubmath.com/hubmath-20260815.dump"
 OUT      = Path("/home/claude/hubmath-site")
 IMG_BASE = "http://www.hubmath.com"
+IMG_NAME_SRC = "/mnt/d/claude/hubmath.com/www/files/member_extra_info/image_name"
+IMG_NAME_DST = OUT / "files/member_extra_info/image_name"
 
 # ── 1. 덤프 로드 ──────────────────────────────────────────────────────────────
 print("Loading dump…", flush=True)
@@ -97,33 +99,30 @@ doc_rows = get_table_rows("smart_documents")
 docs_by_srl = {}
 docs_by_mod = {}
 for r in doc_rows:
-    if len(r) < 24: continue
+    if len(r) < 25: continue
     try:
-        # smart_documents 컬럼 순서:
-        # 0:document_srl 1:module_srl 2:category_srl 3:lang_code
-        # 4:is_notice 5:title 6:is_secret 7:is_temp 8:content
-        # 9:readed_count 10:voted_count 11:blamed_count 12:comment_count
-        # 13:trackback_count 14:uploaded_file_count 15:password
-        # 16:user_name 17:nick_name 18:member_srl 19:email_address
-        # 20:homepage 21:tags 22:extra_vars 23:document_srl(?)
-        # 24:last_updater 25:last_update 26:regdate(?) 27:ipaddress
-        # 덤프 실제 확인: (srl, module_srl, cat_srl, lang, is_notice, title, ...)
-        srl      = int(r[0]) if r[0] else 0
-        mod_srl  = int(r[1]) if r[1] else 0
-        is_notice= str(r[4]).strip() if len(r)>4 and r[4] else 'N'
-        title    = str(r[5]) if len(r)>5 and r[5] else '(제목없음)'
-        content  = str(r[8]) if len(r)>8 and r[8] else ''
-        readed   = int(r[9]) if len(r)>9 and r[9] and str(r[9]).isdigit() else 0
-        nick     = str(r[17]) if len(r)>17 and r[17] else '운영자'
-        # regdate: 길이 14인 숫자 형태 찾기
-        regdate  = ''
-        for fi in range(24, min(len(r), 30)):
-            v = str(r[fi]) if r[fi] else ''
-            if len(v) == 14 and v.isdigit():
-                regdate = v; break
+        # smart_documents 컬럼 순서 (CREATE TABLE 기준):
+        # 0:document_srl  1:module_srl  2:category_srl  3:lang_code
+        # 4:is_notice      5:title       6:title_bold    7:title_color
+        # 8:content        9:readed_count 10:voted_count 11:blamed_count
+        # 12:comment_count 13:trackback_count 14:uploaded_count
+        # 15:password      16:user_id    17:user_name    18:nick_name
+        # 19:member_srl    20:email_address 21:homepage  22:tags
+        # 23:extra_vars    24:regdate    25:last_update  26:last_updater
+        # 27:ipaddress     28:list_order 29:update_order 30:allow_trackback
+        # 31:notify_message 32:status   33:comment_status
+        srl       = int(r[0])  if r[0] else 0
+        mod_srl   = int(r[1])  if r[1] else 0
+        is_notice = str(r[4]).strip() if r[4] else 'N'
+        title     = str(r[5])  if r[5] else '(제목없음)'
+        content   = str(r[8])  if r[8] else ''
+        readed    = int(r[9])  if r[9] and str(r[9]).lstrip('-').isdigit() else 0
+        nick      = str(r[18]) if r[18] else '운영자'
+        member_srl= int(r[19]) if r[19] and str(r[19]).lstrip('-').isdigit() else 0
+        regdate   = str(r[24]) if r[24] else ''
         doc = dict(srl=srl, mod_srl=mod_srl, is_notice=is_notice,
                    title=title, content=content, nick=nick,
-                   regdate=regdate, readed=readed)
+                   member_srl=member_srl, regdate=regdate, readed=readed)
         docs_by_srl[srl] = doc
         docs_by_mod.setdefault(mod_srl, []).append(doc)
     except Exception as e:
@@ -134,14 +133,21 @@ print("Parsing comments…", flush=True)
 cmt_rows = get_table_rows("smart_comments")
 cmts_by_doc = {}
 for r in cmt_rows:
-    if len(r) < 10: continue
+    if len(r) < 15: continue
     try:
-        doc_srl = int(r[1]) if r[1] else 0
+        # 0:comment_srl 1:module_srl 2:document_srl 3:parent_srl
+        # 4:is_secret   5:content    6:voted_count  7:blamed_count
+        # 8:notify_message 9:password 10:user_id   11:user_name
+        # 12:nick_name  13:member_srl 14:email_address 15:homepage
+        # 16:uploaded_count 17:regdate 18:last_update 19:ipaddress
+        doc_srl    = int(r[2]) if r[2] else 0
+        member_srl = int(r[13]) if r[13] and str(r[13]).lstrip('-').isdigit() else 0
         cmts_by_doc.setdefault(doc_srl, []).append(dict(
-            srl     = int(r[0]) if r[0] else 0,
-            content = str(r[5]) if len(r)>5 and r[5] else '',
-            nick    = str(r[9]) if len(r)>9 and r[9] else '익명',
-            regdate = str(r[14]) if len(r)>14 and r[14] else '',
+            srl        = int(r[0]) if r[0] else 0,
+            content    = str(r[5]) if r[5] else '',
+            nick       = str(r[12]) if r[12] else '익명',
+            member_srl = member_srl,
+            regdate    = str(r[17]) if len(r)>17 and r[17] else '',
         ))
     except: pass
 print(f"  comments: {sum(len(v) for v in cmts_by_doc.values())}", flush=True)
@@ -158,6 +164,35 @@ def fix_img(content):
     content = re.sub(r'src="(/modules/)', rf'src="{IMG_BASE}\1', content)
     content = re.sub(r'src="(/common/)', rf'src="{IMG_BASE}\1', content)
     return content
+
+def img_name_path(member_srl: int) -> str:
+    """XE 이미지닉네임 파일 경로 반환 (없으면 빈 문자열)"""
+    if member_srl <= 0:
+        return ''
+    s = str(member_srl)
+    last3  = s[-3:].zfill(3)       # 예: 1345 → '345'
+    prefix = str(member_srl // 1000).zfill(3)  # 예: 1345 → '001'
+    path   = IMG_NAME_DST / last3 / prefix / f"{member_srl}.gif"
+    if path.exists():
+        return f"../files/member_extra_info/image_name/{last3}/{prefix}/{member_srl}.gif"
+    return ''
+
+def nick_html(doc: dict, root="../") -> str:
+    """이미지닉네임이 있으면 img 태그, 없으면 텍스트 반환"""
+    img = img_name_path(doc['member_srl'])
+    if img:
+        alt = html.escape(doc['nick'])
+        # root 기준으로 경로 조정
+        src = img.replace("../", root)
+        return f'<img src="{src}" alt="{alt}" class="img-nick" title="{alt}">'
+    return html.escape(doc['nick'])
+
+# 이미지닉네임 파일 복사
+import shutil, os
+print("Copying image_name files…", flush=True)
+if os.path.isdir(IMG_NAME_SRC):
+    shutil.copytree(IMG_NAME_SRC, str(IMG_NAME_DST), dirs_exist_ok=True)
+    print(f"  copied to {IMG_NAME_DST}", flush=True)
 
 # ── 5. 메뉴 구조 (원래 hubmath.com 그대로) ───────────────────────────────────
 NAV_MENU = [
@@ -317,7 +352,7 @@ def make_list_page(kr_name, docs, root=""):
         <tr>
           <td class="num">{notice_html}</td>
           <td class="title"><a href="article_{doc['srl']}.html">{html.escape(doc['title'])}</a></td>
-          <td class="writer">{html.escape(doc['nick'])}</td>
+          <td class="writer">{nick_html(doc, root)}</td>
           <td class="date">{fmt_date(doc['regdate'])}</td>
           <td class="readed">{doc['readed']}</td>
         </tr>"""
@@ -376,7 +411,7 @@ def make_article_page(doc, list_file, kr_name, root=""):
           <div class="article-head">
             <h2 class="article-title">{html.escape(doc['title'])}</h2>
             <div class="article-meta">
-              <span class="writer"><i class="fa fa-user"></i> {html.escape(doc['nick'])}</span>
+              <span class="writer"><i class="fa fa-user"></i> {nick_html(doc, root)}</span>
               <span class="date"><i class="fa fa-calendar"></i> {fmt_date(doc['regdate'])}</span>
               <span class="readed"><i class="fa fa-eye"></i> {doc['readed']}</span>
             </div>
